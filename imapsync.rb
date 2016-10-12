@@ -4,13 +4,14 @@ class Imapsync < Formula
   homepage "http://ks.lamiral.info/imapsync/"
   url  "https://fedorahosted.org/released/imapsync/imapsync-1.592.tgz"
   sha1 "f107917ee01ef46d97408226a083871a7d660d0b"
-  
+
   head "https://git.fedorahosted.org/git/imapsync.git"
 
-#  depends_on "Mail::IMAPClient"      => :perl
-#  depends_on "Authen::NTLM"          => :perl
-#  depends_on "File::Copy::Recursive" => :perl
-#  depends_on "IO::Tee"               => :perl
+  # not supported yet (but it seems that now - 2016/10 - it is!)
+  #  depends_on "Mail::IMAPClient"      => :perl
+  #  depends_on "Authen::NTLM"          => :perl
+  #  depends_on "File::Copy::Recursive" => :perl
+  #  depends_on "IO::Tee"               => :perl
 
   resource "File::Copy::Recursive" do
     url "http://search.cpan.org/CPAN/authors/id/D/DM/DMUEY/File-Copy-Recursive-0.38.tar.gz"
@@ -64,5 +65,9 @@ class Imapsync < Formula
     bin.install "imapsync"
     man1.install "imapsync.1"
     bin.env_script_all_files(libexec+"bin", :PERL5LIB => ENV['PERL5LIB'])
+  end
+
+  test do
+    system "#{bin}/imapsync", "--version"
   end
 end
