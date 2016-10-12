@@ -8,3 +8,5 @@ To install, type in a terminal:
 
 This repository was forked from [simonrice/imapsync](https://www.github.com/simonrice/homebrew-imapsync), which was copied over from an unmerged Homebrew fork by budrick. To manage perl dependencies, i took code from this [commit](https://github.com/Homebrew/homebrew/commit/4e0dad01bc326ab3d31908fdb3c201bcac233903) by adamv.
 
+
+⚠️️  **NOTE:** IMAPSync is now in the official Homebrew repository - run `brew install imapsync` ⚠️
